@@ -34,8 +34,10 @@ jobs:
             curl http://localhost:4200/login && break || sleep 3;
           done
  
-      - name: Run Playwright tests
-        run: npx playwright test ../tests
+      - name: Go to the tests folder
+        run: cd ../tests
+      - name: Run Playwright Tests
+        run: npx playwright test
  
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v4
