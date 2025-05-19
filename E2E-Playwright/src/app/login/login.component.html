@@ -1,0 +1,57 @@
+
+ 
+<div class="container">
+    <mat-card class="login page">
+     
+      <mat-card-content>
+        <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+ 
+          <div *ngIf="user.errorMessage">
+            <p style="color: red;">{{user.errorMessage}}</p>
+          </div>
+ 
+          <div>
+            <h2>Already Registered!! Login Here</h2>
+            <label for="name">Username</label>
+            <input type="text" id="name" name="name" [(ngModel)]="user.name" placeholder="Enter your username" required title="First Name Required">
+            <div *ngIf="user.userNameErrorMessage">
+              <p style="color: red;">{{user.userNameErrorMessage}}</p>
+            </div>
+          </div>
+         
+          <div>
+            <label for="password">Enter Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="user.password" placeholder="Enter your password" required>
+            <div *ngIf="user.passwordErrorMessage">
+              <p style="color: red;">{{user.passwordErrorMessage}}</p>
+            </div>
+          </div>
+         
+ 
+          <div class="button-group">
+            <button type="submit">Login</button>
+            
+          </div>
+          <br/>
+ 
+         
+          <div>
+            <a [routerLink]="['/signup']">New User.. Register Here</a>
+          </div>
+         
+        </form>
+      </mat-card-content>
+    </mat-card>
+ 
+   
+  </div>
+
+  <ng-template>
+    <div mat-dialog-content>
+      <p>Login successful</p>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close>OK</button>
+    </div>
+  </ng-template>
+ 

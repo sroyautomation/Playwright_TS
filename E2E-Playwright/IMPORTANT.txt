@@ -1,0 +1,6 @@
+RUN:
+npm i
+
+open new terminal and run in main folder
+PS C:\Users\wlech\Desktop\Angular projects\Angular-Forms_Refactored> json-server --watch src\app\userdb.json 
+open http://localhost:3000/users

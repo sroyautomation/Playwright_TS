@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "f8dd",
+      "firstName": "Kaushik",
+      "lastName": "Natua",
+      "username": "kaushik.natua123",
+      "password": "kaushik@123",
+      "email": "kaushik.natua@hyland.com",
+      "phone": 9638527410,
+      "dateofBirth": "1987/03/06"
+    },
+    {
+      "firstName": "Rajdipta",
+      "lastName": "Biswas",
+      "username": "rajdipta.biswas123",
+      "password": "raj@123",
+      "email": "rajdipta.biswas@hyland.com",
+      "phone": 8527419870,
+      "dateofBirth": "1980-02-12",
+      "id": "0780"
+    },
+    {
+      "id": "e31b",
+      "username": "ania",
+      "password": "ania@123",
+      "firstName": "Analia",
+      "lastName": "Byrk",
+      "email": "ania@gmail.com",
+      "phone": "7531597888",
+      "dateofBirth": "1991-07-20"      
+    },
+    {
+      "id": "4e1f",
+      "firstName": "Rohini",
+      "lastName": "Singh",
+      "username": "rohini",
+      "password": "rohin@123",
+      "email": "rohini@gmail.com",
+      "phone": 960074112,
+      "dateofBirth": "2019-01-29"
+    }
+  ]
+}

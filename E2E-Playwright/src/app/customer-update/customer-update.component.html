@@ -1,0 +1,82 @@
+<div class="container">
+    <mat-card class="login page">
+      
+      <mat-card-content>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div>
+      <h2 style="color: red;">
+        {{errorMessage}}
+      </h2>
+    </div>
+
+    <div>
+      <h2>Update Form</h2>
+
+      <div>
+        <label for="username">Username</label>
+        <input type="username" id="username" formControlName="username">        
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" placeholder="Enter your password">
+        <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched">
+          <p style="color: red;">Password is required.</p>
+        </div>
+      </div>
+
+      <div>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" formControlName="firstName" placeholder="Enter your first name">
+        <div *ngIf="userForm.get('firstName')?.invalid && userForm.get('firstName')?.touched">
+          <p style="color: red;">First Name is required.</p>
+        </div>
+      </div>
+
+      <div>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" formControlName="lastName" placeholder="Enter your last name">
+        <div *ngIf="userForm.get('lastName')?.invalid && userForm.get('lastName')?.touched">
+          <p style="color: red;">Last Name is required.</p>
+        </div>
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" placeholder="Enter your email">
+        <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+          <p style="color: red;" *ngIf="userForm.get('email')?.errors?.['required']">Email is required.</p>
+          <p style="color: red;" *ngIf="userForm.get('email')?.errors?.['email']">Invalid email format.</p>
+        </div>
+      </div>
+
+      <div>
+        <label for="phone">Mobile Number</label>
+        <input type="text" id="phone" formControlName="phone" placeholder="Enter your mobile number">
+        <div *ngIf="userForm.get('phone')?.invalid && userForm.get('phone')?.touched">
+          <p style="color: red;" *ngIf="userForm.get('phone')?.errors?.['required']">Phone Number is required.</p>
+          <p style="color: red;" *ngIf="userForm.get('phone')?.errors?.['pattern']">Invalid phone number format. Must be 10 digits.</p>
+        </div>
+      </div>
+
+      <div>
+        <label for="dateofBirth">Date Of Birth</label>
+        <input type="text" id="dateofBirth" formControlName="dateofBirth" placeholder="MM/dd/YYYY">
+        <div *ngIf="userForm.get('dateofBirth')?.invalid && userForm.get('dateofBirth')?.touched">
+          <p style="color: red;" *ngIf="userForm.get('dateofBirth')?.errors?.['required']">Date of Birtg is required.</p>
+             
+      </div></div>
+
+      <div class="button-group">
+        <button type="submit" [disabled]="userForm.invalid">Update</button>
+        <button type="reset" (click)="onReset()">Reset</button>
+        <!-- //added reset button -->
+      </div>
+    </div>
+  </form>
+
+</mat-card-content>
+</mat-card>
+
+
+</div>

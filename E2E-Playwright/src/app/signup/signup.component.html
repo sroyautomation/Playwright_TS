@@ -1,0 +1,79 @@
+<div class="container">
+    <mat-card class="login page">
+      
+      <mat-card-content>
+        <form (ngSubmit)="onSubmit(userForm)"  #userForm="ngForm">          
+  
+          <div>
+            <h2>New User Registration Form</h2>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" [(ngModel)]="user.firstName" placeholder="Enter your first name" required title="First Name Required">
+            <div *ngIf="userForm.controls['firstName']?.errors?.['required'] && userForm.controls['firstName'].touched">
+              <p style="color: red;">First Name is required.</p>
+            </div>
+          </div>
+
+          <div>            
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" [(ngModel)]="user.lastName" placeholder="Enter your last name" required title="First Name Required">
+            <div *ngIf="userForm.controls['lastName']?.errors?.['required'] && userForm.controls['lastName'].touched">
+              <p style="color: red;">Last Name is required.</p>
+            </div>
+          </div>
+
+          <div>            
+            <label for="userName">Username</label>
+            <input type="text" id="userName" name="userName" [(ngModel)]="user.username" placeholder="Enter your username" required title="First Name Required">
+            <div *ngIf="userForm.controls['userName']?.errors?.['required'] && userForm.controls['userName'].touched">
+              <p style="color: red;">Username is required.</p>
+            </div>
+          </div>
+  
+          <div>
+            <label for="password">Enter Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="user.password" placeholder="Enter your password" required>
+            <div *ngIf="userForm.controls['password']?.errors?.['required'] && userForm.controls['password'].touched">
+              <p style="color: red;">Password is required.</p>
+            </div>
+          </div>
+
+          <div>
+            <label for="email">Enter Email</label>
+            <input type="text" id="email" name="email" [(ngModel)]="user.email" placeholder="Enter your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+            <div *ngIf="userForm.controls['email']?.errors?.['required'] && userForm.controls['email'].touched">
+              <p style="color: red;">Email is required.</p>
+            </div>
+            <div *ngIf="userForm.controls['email']?.errors?.['pattern'] && userForm.controls['email'].touched">
+                <p style="color: red;">Invalid email format.</p>
+            </div>
+          </div>
+
+          <div>
+            <label for="phone">Enter Mobile Number</label>
+            <input type="number" id="phone" name="phone" [(ngModel)]="user.phone" placeholder="Enter your mobile number" required>
+            <div *ngIf="userForm.controls['phone']?.errors?.['required'] && userForm.controls['phone'].touched">
+              <p style="color: red;">Phone Number is required.</p>
+            </div>
+          </div>
+
+          <div>
+            <label for="dateOfBirth">Enter Date Of Birth</label>
+            <input type="date" id="dateofBirth" name="dateofBirth" [(ngModel)]="user.dateofBirth" placeholder="MM/DD/YYYY" required>
+            <div *ngIf="userForm.controls['dateofBirth']?.errors?.['required'] && userForm.controls['dateofBirth'].touched">
+              <p style="color: red;">Date Of Birth is required.</p>
+            </div>
+          </div>
+  
+          <div class="button-group">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+          </div>
+          <br/>
+          
+          
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+    
+  </div>
